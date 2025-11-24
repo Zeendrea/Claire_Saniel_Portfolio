@@ -1,0 +1,113 @@
+.about {
+  background: var(--bg-card);
+  border-radius: 30px;
+  margin: 2rem auto;
+  padding: 4rem 3rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(139, 127, 184, 0.1);
+}
+
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.about-education,
+.about-certifications {
+  margin-top: 2rem;
+}
+
+.education-title,
+.certifications-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  border-bottom: 2px solid rgba(139, 127, 184, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.education-item,
+.certification-item {
+  background: var(--gradient-soft);
+  border: 1px solid rgba(139, 127, 184, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.education-item:hover,
+.certification-item:hover {
+  background: rgba(139, 127, 184, 0.15);
+  border-color: var(--primary-color);
+  transform: translateX(5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.education-item h4,
+.certification-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.education-school,
+.certification-details {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  font-weight: 300;
+}
+
+.education-period {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 968px) {
+  .about {
+    padding: 3rem 2rem;
+    margin: 1rem;
+    border-radius: 25px;
+  }
+
+  .about-content {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .education-title,
+  .certifications-title {
+    font-size: 1.3rem;
+  }
+}

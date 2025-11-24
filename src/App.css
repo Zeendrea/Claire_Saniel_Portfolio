@@ -1,0 +1,61 @@
+.App {
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+}
+
+/* Smooth scroll animations */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section spacing */
+section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Shared section styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--gradient);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}

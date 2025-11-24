@@ -1,0 +1,147 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(245, 194, 209, 0.2);
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-soft);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Added for better positioning */
+}
+
+.logo {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  position: absolute; /* Changed to position logo separately */
+  left: 2rem; /* Position from left */
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  background: var(--gradient-soft);
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-accent);
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 0 auto; /* Center the nav */
+}
+
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+  letter-spacing: 0.3px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-accent);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+  position: absolute; /* Position toggle separately */
+  right: 2rem; /* Position from right */
+}
+
+.mobile-menu-toggle:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(139, 127, 184, 0.2);
+    box-shadow: var(--shadow-medium);
+    margin: 0; /* Reset margin for mobile */
+  }
+
+  .nav.mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header-container {
+    padding: 1rem;
+  }
+
+  .logo {
+    position: static; /* Reset position for mobile */
+    margin: 0 auto; /* Center logo on mobile if needed */
+  }
+}
