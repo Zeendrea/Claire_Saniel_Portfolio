@@ -1,3 +1,4 @@
+/* --- CONTACT SECTION MAIN --- */
 .contact {
   padding: 80px 20px;
   background: var(--bg-card);
@@ -5,16 +6,22 @@
   margin: 2rem auto;
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(139, 127, 184, 0.1);
+  max-width: 1000px;
 }
 
 .contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 4rem;
+  display: flex;
+  justify-content: center;
   margin-top: 3rem;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+}
+
+.contact-info {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-info-title {
@@ -30,18 +37,23 @@
   line-height: 1.8;
   margin-bottom: 2.5rem;
   font-weight: 300;
+  max-width: 500px;
 }
 
+/* --- THE ALIGNMENT FIX --- */
 .contact-details {
-  display: flex;
+  display: inline-flex; /* Para mag-center ang tibuok pundok */
   flex-direction: column;
   gap: 2rem;
+  align-items: flex-start; /* Mao ni ang sekreto para maglinya ang icons */
+  margin: 0 auto;
 }
 
 .contact-detail-item {
   display: flex;
   gap: 1.5rem;
-  align-items: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
 .contact-icon {
@@ -55,15 +67,20 @@
   justify-content: center;
   font-size: 1.3rem;
   color: var(--primary-color);
-  flex-shrink: 0;
+  flex-shrink: 0; /* Para dili ma-deform ang box */
   box-shadow: var(--shadow-soft);
+}
+
+.contact-detail-content {
+  text-align: left; /* Sigurado nga left-aligned ang titles */
 }
 
 .contact-detail-content h4 {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin: 0; /* Kuhaon ang default margin */
   color: var(--text-primary);
+  line-height: 1.2;
 }
 
 .contact-detail-content a,
@@ -72,123 +89,42 @@
   text-decoration: none;
   transition: color 0.3s ease;
   font-weight: 300;
+  margin: 0.2rem 0 0 0;
+  display: block;
 }
 
 .contact-detail-content a:hover {
   color: var(--primary-color);
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.form-group {
-  position: relative;
-}
-
-.form-input {
-  width: 100%;
-  padding: 1rem 1.5rem;
-  background: var(--bg-secondary);
-  border: 2px solid rgba(139, 127, 184, 0.2);
-  border-radius: 15px;
-  color: var(--text-primary);
-  font-size: 1rem;
-  font-family: inherit;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-soft);
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  background: var(--bg-card);
-  box-shadow: var(--shadow-medium);
-}
-
-.form-input::placeholder {
-  color: var(--text-light);
-}
-
-.form-textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-.form-submit {
-  width: 100%;
-  margin-top: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.form-submit:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.form-message {
-  padding: 1rem;
-  border-radius: 15px;
-  text-align: center;
-  font-weight: 500;
-  animation: slideIn 0.3s ease;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.form-message.success {
-  background: rgba(76, 175, 80, 0.1);
-  border: 1px solid rgba(76, 175, 80, 0.3);
-  color: #4caf50;
-}
-
-.resume-download {
-  margin-top: 1rem;
-}
-
+/* --- RESPONSIVENESS --- */
 @media (max-width: 968px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
   .contact {
     padding: 3rem 2rem;
     margin: 1rem;
-    border-radius: 25px;
   }
 }
 
 @media (max-width: 640px) {
   .contact {
     padding: 2rem 1.5rem;
-    border-radius: 20px;
   }
 
   .contact-info-title {
     font-size: 1.5rem;
   }
 
-  .contact-detail-item {
-    gap: 1rem;
+  .contact-details {
+    align-items: center; /* Sa mobile, mas maayo og center na tanan */
   }
 
-  .contact-icon {
-    width: 45px;
-    height: 45px;
-    font-size: 1.1rem;
+  .contact-detail-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .contact-detail-content {
+    text-align: center;
   }
 }

@@ -12,11 +12,9 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p className="about-paragraph">
-            I am an Information Technology student focused on frontend development, UI/UX design, 
-            quality assurance, and project coordination. I enjoy turning product ideas into polished 
-            interfaces, writing clear test cases, and organizing tasks so teams can deliver dependable 
-            software. I collaborate closely with developers and designers to improve user experience 
-            and ensure product quality from planning through release.
+            I am a Senior Information Technology student at CIT-University. I've always been passionate about the "human side" of technology—not just writing code, but making sure that software is intuitive and helpful for the people using it.
+            I recently finished a 500-hour internship where I was recognized for being a fast learner and for getting technical tasks done ahead of schedule. Whether I'm designing the layout of an app, testing a system for bugs, or creating a step-by-step guide for a team to follow, my goal is always the same: to deliver high-quality work that people can actually rely on.
+            Beyond building websites, I also hold certifications in Cloud technology and ServiceNow, which help me manage the "behind-the-scenes" systems that keep modern businesses running.
           </p>
         </div>
 
@@ -50,6 +48,14 @@ const About = () => {
             <h4>AWS Academy Cloud Architecting</h4>
             <p className="certification-details">Certification [133939], November 2025</p>
           </div>
+          <div className="certification-item">
+            <h4>Accenture Technology Academy</h4>
+            <p className="certification-details">Certificate of Completion, January 2026 - Completed a 60-hour intensive AWS training program focused on cloud infrastructure and deployment.</p>
+          </div>
+          <div className="certification-item">
+            <h4>Now Assist Executive Micro-Certification</h4>
+            <p className="certification-details">ServiceNow University, April 2026</p>
+          </div>
         </div>
       </div>
     </section>
@@ -57,5 +63,3 @@ const About = () => {
 }
 
 export default About
-
-

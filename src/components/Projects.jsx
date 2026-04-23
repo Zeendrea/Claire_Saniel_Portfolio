@@ -10,8 +10,8 @@ const Projects = () => {
       roles: 'UI/UX Designer · Frontend Developer · QA Tester',
       description: 'Designed UI for customer/business/driver pages; built responsive components and wrote test cases for navigation and input validation.',
       technologies: ['HTML', 'CSS', 'Figma'],
-      image: '/images/LaundryDash.png', // Updated to actual image
-      github: 'https://github.com',
+      image: '/images/LaundryDash.png',
+      github: 'https://github.com/Isleden/ProjDevProject_LaundryDash_G6.git',
       demo: null,
       featured: true
     },
@@ -21,8 +21,8 @@ const Projects = () => {
       roles: 'Frontend Developer · UX Contributor · Assistant Project Coordinator',
       description: 'Life Skills E-Learning Platform for SPED Students. Defined game flow and UX, implemented responsive UI screens, coordinated feature planning and timelines, and performed manual user-flow testing.',
       technologies: ['React', 'Figma'],
-      image: '/images/SkillAble.png', // Updated to actual image
-      github: 'https://github.com',
+      image: '/images/SkillAble.png',
+      github: 'https://github.com/natorvincent/SkillAble.git',
       demo: 'https://skillable.netlify.app/',
       featured: true
     },
@@ -32,8 +32,8 @@ const Projects = () => {
       roles: 'Frontend Developer · QA Tester',
       description: 'Job Matching & Employment Platform. Built React components with Material UI and Tailwind; integrated APIs for postings and auth; performed functional and API testing.',
       technologies: ['React', 'MUI', 'Tailwind', 'Axios', 'Postman'],
-      image: '/images/JobFlex.png', // Updated to actual image
-      github: 'https://github.com',
+      image: '/images/JobFlex.png',
+      github: 'https://github.com/ezzeljan/IT342-JobFlex.git',
       demo: null,
       featured: false
     },
@@ -43,8 +43,30 @@ const Projects = () => {
       roles: 'Frontend Developer · UI/UX Designer · Assistant Project Manager',
       description: 'On-Demand Local Service Booking. Implemented UI components integrated with a Spring Boot backend; helped write feature requirements, track tasks, and run cross-browser functionality tests.',
       technologies: ['React', 'Spring Boot', 'Git'],
-      image: '/images/TrabaHanap.png', // Updated to actual image
-      github: 'https://github.com',
+      image: '/images/TrabaHanap.png',
+      github: 'https://github.com/vincentnator2/Trabahanap.git',
+      demo: null,
+      featured: false
+    },
+    {
+      id: 5,
+      title: 'NOTES APP',
+      roles: 'Frontend Developer',
+      description: 'Note-taking application featuring wallet-based authentication and database persistence. Built with modern web technologies for secure and persistent note storage.',
+      technologies: ['React', 'Wallet Authentication', 'Database'],
+      image: '/images/notes.jpg',
+      github: 'https://github.com/Nokitaki/NotesApp.git',
+      demo: null,
+      featured: false
+    },
+    {
+      id: 6,
+      title: 'QUEUE',
+      roles: 'Frontend Developer',
+      description: 'Queue management application built with React. Features a responsive interface for managing and processing queue data efficiently.',
+      technologies: ['React', 'JavaScript', 'CSS'],
+      image: '/images/QUEUE.jpg',
+      github: 'https://github.com/Zeendrea/Queue.git',
       demo: null,
       featured: false
     }

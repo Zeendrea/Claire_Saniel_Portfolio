@@ -1,41 +1,8 @@
-import React, { useState } from 'react'
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa'
+import React from 'react'
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
 import './Contact.css'
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus(null)
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '' })
-      
-      setTimeout(() => {
-        setSubmitStatus(null)
-      }, 5000)
-    }, 1500)
-  }
-
   const contactInfo = [
     {
       icon: <FaEnvelope />,
@@ -92,81 +59,9 @@ const Contact = () => {
             ))}
           </div>
         </div>
-
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-              className="form-input"
-            />
-          </div>
-
-          <div className="form-group">
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              rows="6"
-              className="form-input form-textarea"
-            ></textarea>
-          </div>
-
-          <button 
-            type="submit" 
-            className="btn btn-primary form-submit"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? (
-              'Sending...'
-            ) : (
-              <>
-                Send Message <FaPaperPlane style={{ marginLeft: '0.5rem' }} />
-              </>
-            )}
-          </button>
-
-          {submitStatus === 'success' && (
-            <div className="form-message success">
-              Thank you! Your message has been sent successfully.
-            </div>
-          )}
-        </form>
       </div>
     </section>
   )
 }
 
 export default Contact
-
-

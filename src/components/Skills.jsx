@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { 
   FaReact, 
   FaNodeJs, 
@@ -9,16 +9,18 @@ import {
   FaPython,
   FaDatabase
 } from 'react-icons/fa'
-import { SiTypescript, SiMongodb, SiPostgresql, SiTailwindcss } from 'react-icons/si'
+import { SiTailwindcss, SiAndroidstudio, SiPostman, SiFigma, SiMysql } from 'react-icons/si'
 import './Skills.css'
 
 const Skills = () => {
+  const progressRefs = useRef([])
+
   const skillCategories = [
     {
       title: 'Design & UX',
       skills: [
-        { name: 'Wireframing & Prototyping (Figma)', icon: <FaCss3Alt />, level: 85 },
-        { name: 'User Flows & Interaction Design', icon: <FaCss3Alt />, level: 80 },
+        { name: 'Wireframing & Prototyping (Figma)', icon: <SiFigma />, level: 85 },
+        { name: 'User Flows & Interaction Design', icon: <SiFigma />, level: 80 },
         { name: 'Visual/UI Layout & Responsive Design', icon: <FaCss3Alt />, level: 85 },
       ]
     },
@@ -30,7 +32,7 @@ const Skills = () => {
         { name: 'CSS', icon: <FaCss3Alt />, level: 90 },
         { name: 'Tailwind CSS', icon: <SiTailwindcss />, level: 75 },
         { name: 'JavaScript/TypeScript', icon: <FaJs />, level: 80 },
-        { name: 'Android Studio (Java/Kotlin)', icon: <FaReact />, level: 45 },
+        { name: 'Android Studio (Java/Kotlin)', icon: <SiAndroidstudio />, level: 45 },
         { name: 'Java Swing (GUI)', icon: <FaReact />, level: 50 },
       ]
     },
@@ -41,7 +43,7 @@ const Skills = () => {
         { name: 'Regression Testing', icon: <FaDatabase />, level: 80 },
         { name: 'Test Case Creation', icon: <FaDatabase />, level: 85 },
         { name: 'Bug Reporting', icon: <FaDatabase />, level: 85 },
-        { name: 'API Validation (Postman)', icon: <FaDatabase />, level: 80 },
+        { name: 'API Validation (Postman)', icon: <SiPostman />, level: 80 },
       ]
     },
     {
@@ -57,17 +59,41 @@ const Skills = () => {
       title: 'Tools & Technologies',
       skills: [
         { name: 'GitHub', icon: <FaGitAlt />, level: 85 },
-        { name: 'Postman', icon: <FaDatabase />, level: 80 },
-        { name: 'Figma', icon: <FaCss3Alt />, level: 85 },
-        { name: 'MySQL', icon: <FaDatabase />, level: 75 },
+        { name: 'Postman', icon: <SiPostman />, level: 80 },
+        { name: 'Figma', icon: <SiFigma />, level: 85 },
+        { name: 'MySQL', icon: <SiMysql />, level: 75 },
         { name: 'VS Code', icon: <FaGitAlt />, level: 90 },
-        { name: 'Trello / ClickUp', icon: <FaGitAlt />, level: 80 },
+        { name: 'Trello / ClickUp', icon: <FaDatabase />, level: 80 },
         { name: 'Java (Spring Boot)', icon: <FaPython />, level: 75 },
         { name: 'Python', icon: <FaPython />, level: 45 },
         { name: 'C', icon: <FaPython />, level: 45 },
       ]
     }
   ]
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const bar = entry.target
+            const targetWidth = bar.getAttribute('data-width')
+            bar.style.width = targetWidth
+            observer.unobserve(bar)
+          }
+        })
+      },
+      { threshold: 0.2 }
+    )
+
+    progressRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  let refIndex = 0
 
   return (
     <section id="skills" className="skills">
@@ -81,21 +107,25 @@ const Skills = () => {
           <div key={index} className="skill-category">
             <h3 className="category-title">{category.title}</h3>
             <div className="skills-grid">
-              {category.skills.map((skill, skillIndex) => (
-                <div key={skillIndex} className="skill-item">
-                  <div className="skill-header">
-                    <div className="skill-icon">{skill.icon}</div>
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.level}%</span>
+              {category.skills.map((skill, skillIndex) => {
+                const currentRef = refIndex++
+                return (
+                  <div key={skillIndex} className="skill-item">
+                    <div className="skill-header">
+                      <div className="skill-icon">{skill.icon}</div>
+                      <span className="skill-name">{skill.name}</span>
+                      <span className="skill-percentage">{skill.level}%</span>
+                    </div>
+                    <div className="skill-bar">
+                      <div
+                        className="skill-progress"
+                        data-width={`${skill.level}%`}
+                        ref={(el) => (progressRefs.current[currentRef] = el)}
+                      ></div>
+                    </div>
                   </div>
-                  <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         ))}
@@ -105,5 +135,3 @@ const Skills = () => {
 }
 
 export default Skills
-
-
