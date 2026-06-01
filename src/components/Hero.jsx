@@ -42,11 +42,11 @@ const Hero = () => {
               >
                 Get In Touch
               </button>
-              <a 
-                href="/ClaireSaniel_Resume.pdf" 
-                download="ClaireSaniel_Resume.pdf"
-                className="btn btn-secondary"
-              >
+             <a 
+              href="/documents/ClaireSaniel_Resume.pdf" 
+              download="ClaireSaniel_Resume.pdf"
+              className="btn btn-secondary"
+>
                 📄 Download Resume
               </a>
             </div>
