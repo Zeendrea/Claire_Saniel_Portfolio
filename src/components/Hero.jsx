@@ -85,7 +85,7 @@ const Hero = () => {
               <div className="avatar-glow"></div>
               <div className="avatar-content">
                 <img 
-                  src="/images/grad.jpg" 
+                  src="/images/2x2.jpg" 
                   alt="Claire Andrea S. Saniel" 
                   className="profile-image"
                 />
