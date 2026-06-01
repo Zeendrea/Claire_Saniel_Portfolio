@@ -110,6 +110,7 @@
   font-size: 1.45rem;
   font-weight: 700;
   color: var(--text-primary);
+  margin-top: 2rem;
   margin-bottom: 1.25rem;
   border-bottom: none;
 }

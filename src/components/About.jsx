@@ -12,9 +12,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p className="about-paragraph">
-            I am a Senior Information Technology student at CIT-University. I've always been passionate about the "human side" of technology—not just writing code, but making sure that software is intuitive and helpful for the people using it.
-            I recently finished a 500-hour internship where I was recognized for being a fast learner and for getting technical tasks done ahead of schedule. Whether I'm designing the layout of an app, testing a system for bugs, or creating a step-by-step guide for a team to follow, my goal is always the same: to deliver high-quality work that people can actually rely on.
-            Beyond building websites, I also hold certifications in Cloud technology and ServiceNow, which help me manage the "behind-the-scenes" systems that keep modern businesses running.
+           As an IT graduate from CIT-University, I care deeply about the 'human side' of technology. To me, it is not just about writing code—it is about making sure software is easy and helpful for the people using it. This mindset helped me excel during my 500-hour internship, where I was recognized for learning quickly and finishing technical tasks ahead of schedule. Whether I am designing layouts in Figma, building smooth websites with React, or writing simple guides for a team to follow, my goal is always to deliver work people can rely on. Beyond building websites, I am also certified in AWS Cloud and ServiceNow, and I recently completed training in data privacy and AI tools.
           </p>
         </div>
 
@@ -23,7 +21,7 @@ const About = () => {
           <div className="education-item">
             <h4>Bachelor of Science in Information Technology</h4>
             <p className="education-school">Cebu Institute of Technology – University</p>
-            <p className="education-period">2022 – Present</p>
+            <p className="education-period">2022 – 2026</p>
           </div>
           <div className="education-item">
             <h4>Senior High School</h4>
@@ -55,6 +53,18 @@ const About = () => {
           <div className="certification-item">
             <h4>Now Assist Executive Micro-Certification</h4>
             <p className="certification-details">ServiceNow University, April 2026</p>
+          </div>
+          <div className="certification-item">
+            <h4>Implement Basic Automation Techniques Using AI Tools</h4>
+            <p className="certification-details">Advanced Institute of Technology (TESDA) - Course Completed</p>
+          </div>
+          <div className="certification-item">
+            <h4>Utilize Generative AI</h4>
+            <p className="certification-details">Advanced Institute of Technology (TESDA) - Course Completed</p>
+          </div>
+          <div className="certification-item">
+            <h4>Ensure Compliance with Data Privacy and Ethics</h4>
+            <p className="certification-details">Advanced Institute of Technology (TESDA) - Course Completed</p>
           </div>
         </div>
       </div>
