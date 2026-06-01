@@ -43,8 +43,8 @@ const Hero = () => {
                 Get In Touch
               </button>
               <a 
-                href="/documents/ClaireSaniel_Resume.pdf" 
-                download
+                href="/ClaireSaniel_Resume.pdf" 
+                download="Claire_Saniel_Resume.pdf"
                 className="btn btn-secondary"
               >
                 📄 Download Resume
